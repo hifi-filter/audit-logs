@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>audit-logs-client-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Audit Logs Client - Parent</name>
+
+    <parent>
+        <groupId>com.hifi-filter</groupId>
+        <artifactId>audit-logs-parent-aggregator</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modules>
+        <module>audit-logs-client-runtime</module>
+        <module>audit-logs-client-deployment</module>
+        <module>audit-logs-client-integration-tests</module>
+    </modules>
+</project>

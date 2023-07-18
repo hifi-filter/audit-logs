@@ -8,7 +8,6 @@ import com.hififilter.audit.logs.common.runtime.audit.annotations.AuditLogOption
 import com.hififilter.audit.logs.common.runtime.audit.bean.AuditLog;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.net.SocketAddress;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.MultivaluedMap;
 import java.lang.reflect.Method;
@@ -24,8 +23,7 @@ import lombok.Getter;
 /**
  * Audit log management service.
  */
-@ApplicationScoped
-public class AuditLogService {
+public abstract class AuditLogService {
 
     /**
      * HTTP Headers masked to avoid credentials leak
@@ -45,8 +43,7 @@ public class AuditLogService {
     /**
      * Service used to send AuditLog to external system
      */
-    @Inject
-    protected AuditLogSender senderService;
+    protected final AuditLogSender senderService;
 
     /**
      * Service to get audit log options from invoked method
@@ -65,6 +62,15 @@ public class AuditLogService {
      */
     @Getter
     protected AuditLogOptions options;
+
+    /**
+     * Audit log
+     *
+     * @param senderService Service to send audit log to external system
+     */
+    protected AuditLogService(final AuditLogSender senderService) {
+        this.senderService = senderService;
+    }
 
     /**
      * Init audit log with request infos.

@@ -3,7 +3,6 @@ package com.hififilter.audit.logs.client.runtime.audit.service;
 import com.hififilter.audit.logs.client.runtime.AuditLogsClientConfig;
 import com.hififilter.audit.logs.client.runtime.audit.Loggers;
 import com.hififilter.audit.logs.common.runtime.audit.bean.AuditLog;
-import com.hififilter.audit.logs.common.runtime.audit.service.AuditLogService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.ClientResponseContext;

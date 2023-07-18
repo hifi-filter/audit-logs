@@ -1,7 +1,6 @@
 package com.hififilter.audit.logs.server.runtime.audit.service;
 
 import com.hififilter.audit.logs.common.runtime.audit.bean.AuditLog;
-import com.hififilter.audit.logs.common.runtime.audit.service.AuditLogService;
 import com.hififilter.audit.logs.server.runtime.AuditLogsServerConfig;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.net.SocketAddress;
